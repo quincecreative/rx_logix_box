@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 418.09 271.84">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .07em;
+      }
+
+      .cls-2 {
+        letter-spacing: .09em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: .08em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        font-size: 15.67px;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #eff8f5;
+        font-family: Exo2-Medium, 'Exo2 Medium';
+        font-variation-settings: ';
+        font-weight: 500;
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient);
+        opacity: .6;
+      }
+
+      .cls-9 {
+        letter-spacing: .07em;
+      }
+
+      .cls-10 {
+        letter-spacing: .08em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        letter-spacing: .08em;
+      }
+
+      .cls-13 {
+        letter-spacing: .07em;
+      }
+
+      .cls-14 {
+        letter-spacing: .08em;
+      }
+
+      .cls-15 {
+        letter-spacing: .08em;
+      }
+
+      .cls-7 {
+        font-size: 15.67px;
+      }
+
+      .cls-16 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="209.04" y1="207.14" x2="209.04" y2="-79.19" gradientUnits="userSpaceOnUse">
+      <stop offset=".41" stop-color="#2075bc"/>
+      <stop offset=".41" stop-color="#2076bc"/>
+      <stop offset=".43" stop-color="#2b8bbd"/>
+      <stop offset=".45" stop-color="#339cbd"/>
+      <stop offset=".47" stop-color="#39a8be"/>
+      <stop offset=".51" stop-color="#3dafbe"/>
+      <stop offset=".6" stop-color="#3eb1bf"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-8" d="m201.68,1.27L3.7,63.52c-4.39,1.58-5.28,7.4-.42,9.63l187.52,104.26c11.55,5.33,24.85,5.33,36.4,0l187.52-104.26c5.3-2.82,3.7-8.02-.42-9.63L216.32,1.27c-4.73-1.7-9.9-1.7-14.63,0Z"/>
+  <text class="cls-7" transform="translate(48.56 215.75) rotate(32.63) scale(.99 .8) skewX(27.36)"><tspan class="cls-4" x="0" y="0">PV </tspan><tspan class="cls-1" x="24.16" y="0">D</tspan><tspan class="cls-16" x="35.63" y="0">A</tspan><tspan class="cls-5" x="45.27" y="0">T</tspan><tspan class="cls-15" x="53.13" y="0">AHUB</tspan></text>
+  <text class="cls-6" transform="translate(290.96 268.12) rotate(-33.64) scale(.99 .79) skewX(-27.82)"><tspan class="cls-14" x="0" y="0">PV </tspan><tspan class="cls-13" x="24.16" y="0">D</tspan><tspan class="cls-11" x="35.63" y="0">A</tspan><tspan class="cls-3" x="45.27" y="0">T</tspan><tspan class="cls-14" x="53.13" y="0">AHUB</tspan></text>
+  <text class="cls-6" transform="translate(283.45 190.58) rotate(-31.28) scale(.99 .81) skewX(-26.29)"><tspan class="cls-10" x="0" y="0">PV REPO</tspan><tspan class="cls-2" x="64.44" y="0">R</tspan><tspan class="cls-9" x="74.27" y="0">T</tspan><tspan class="cls-12" x="83.21" y="0">S</tspan></text>
+</svg>

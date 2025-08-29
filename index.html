@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box</title>
+
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 700px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            /* background-color: #ff00ff; */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            /* background-color: #ff00ff; */
+        }
+
+        .lines-mask {
+            position: absolute;
+            width: 70%;
+            mask-image: url("images/lines-mask.png");
+            mask-repeat: no-repeat;
+            mask-size: 100%;
+            mask-position: center;
+            z-index: 30;
+            pointer-events: none;
+        }
+
+        .shine-lines {
+            position: absolute;
+            top: 0%;
+            left: -16%;
+            bottom: 0%;
+            width: 6%;
+            height: 50%;
+            opacity: 1;
+            /* transform: rotate(20deg); */
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            /* background: rgba(255, 255, 255, 0.13); */
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 1) 20%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 1) 80%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        #shine-lines {
+            animation: moveShineLinesUpper 1.5s linear;
+            /* left: 14%; */
+            z-index: 15;
+        }
+
+        @keyframes moveShineLinesUpper {
+            0% {
+                left: -16%;
+                top: -15%;
+            }
+
+            40% {
+                left: 53%;
+                top: 12%;
+            }
+
+            100% {
+                left: 123%;
+                top: -20%;
+            }
+        }
+
+        @keyframes moveShineLinesLower {
+            0% {
+                left: -16%;
+                top: 35%;
+            }
+
+            40% {
+                left: 53%;
+                top: 55%;
+            }
+
+            100% {
+                left: 123%;
+                top: 30%;
+            }
+        }
+
+        .box-container {
+            width: 70%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            mask-image: url("images/box-mask.png");
+            mask-repeat: no-repeat;
+            mask-size: 100%;
+            mask-position: center;
+            z-index: 10;
+        }
+
+        .box-parts {
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+
+        #top {
+            top: 0%;
+            left: 0%;
+            z-index: 11;
+            /* display: none; */
+        }
+
+        #middle {
+            top: 15.6%;
+            left: 0%;
+            z-index: 9;
+            /* display: none; */
+        }
+
+        #plane-one {
+            top: 14.7%;
+            left: 0%;
+            z-index: 5;
+            /* display: none; */
+        }
+
+        #plane-two {
+            top: 30.9%;
+            left: 0%;
+            z-index: 4;
+            /* display: none; */
+        }
+
+        #plane-three {
+            top: 44.6%;
+            left: 0%;
+            z-index: 3;
+            /* display: none; */
+        }
+
+        #bottom {
+            top: 44.8%;
+            left: 0%;
+            z-index: 11;
+            /* display: none; */
+        }
+
+        #box-shine {
+            bottom: 0%;
+            left: 25%;
+            width: 50%;
+            z-index: 12;
+            pointer-events: none;
+            /* display: none; */
+        }
+
+
+        .shine {
+            position: absolute;
+            top: 0%;
+            left: -20%;
+            bottom: 0%;
+            width: 12%;
+            height: 50%;
+            opacity: 1;
+            /* transform: rotate(20deg); */
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            /* border-radius: 50%; */
+            /* background: rgba(255, 255, 255, 1); */
+            background: rgba(255, 255, 255, 0.13);
+            /* background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0.13) 0%,
+                    rgba(255, 255, 255, 0.13) 77%,
+                    rgba(255, 255, 255, 0.5) 92%,
+                    rgba(255, 255, 255, 0.0) 100%); */
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 30%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0.3) 70%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        #shine {
+            animation: moveShineUpper 1.5s linear;
+            /* left: 11%; */
+            z-index: 10;
+        }
+
+        @keyframes moveShineUpper {
+            0% {
+                left: -20%;
+                top: 0%;
+            }
+
+            40% {
+                left: 50%;
+                top: 27%;
+            }
+
+            100% {
+                left: 120%;
+                top: -5%;
+            }
+        }
+
+        @keyframes moveShineLower {
+            0% {
+                left: -20%;
+                top: 35%;
+            }
+
+            40% {
+                left: 50%;
+                top: 55%;
+            }
+
+            100% {
+                left: 120%;
+                top: 30%;
+            }
+        }
+
+        .tabs-container {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 50%;
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .tab-parts {
+            position: absolute;
+            height: auto;
+            z-index: 1;
+        }
+
+        #upperTab {
+            width: 55%;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #lowerTab {
+            width: 55%;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #upperForHover {
+            position: absolute;
+            top: 25%;
+            /* left: 30%; */
+            width: 100%;
+            height: 30%;
+            /* transform: rotate(29deg) skew(28deg); */
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            z-index: 12;
+        }
+
+        #upperForHover:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 51%;
+            /* background: red; */
+            transform: skew(0deg, 27deg);
+        }
+
+        #upperForHover:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+            /* background: red; */
+            transform: skew(0deg, -27deg);
+        }
+
+        #lowerForHover {
+            position: absolute;
+            top: 58%;
+            /* left: 30%; */
+            width: 100%;
+            height: 30%;
+            /* transform: rotate(29deg) skew(28deg); */
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            z-index: 12;
+        }
+
+        #lowerForHover:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 51%;
+            /* background: rgb(47, 0, 255); */
+            transform: skew(0deg, 29deg);
+        }
+
+        #lowerForHover:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+            /* background: rgb(47, 0, 255); */
+            transform: skew(0deg, -29deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="container">
+            <div class="lines-mask" id="lines-mask">
+                <div id="shine-lines" class="shine-lines"></div>
+            </div>
+            <div class="box-container">
+                <img class="fake-box" src="images/box-04.svg" alt="" style="visibility: hidden;">
+                <img id="top" class="box-parts" src="images/top.svg" alt="">
+                <img id="middle" class="box-parts" src="images/middle.svg" alt="">
+                <div id="upperForHover"></div>
+                <img id="plane-one" class="box-parts" src="images/plane-one.svg" alt="">
+                <img id="plane-two" class="box-parts" src="images/plane-two.svg" alt="">
+                <img id="plane-three" class="box-parts" src="images/plane-third.svg" alt="">
+                <img id="bottom" class="box-parts" src="images/bottom.svg" alt="">
+                <div id="lowerForHover"></div>
+                <img id="box-shine" class="box-parts" src="images/shine.svg" alt="">
+                <div id="shine" class="shine"></div>
+
+            </div>
+            <div class="tabs-container">
+                <img id="upperTab" class="tab-parts" src="images/upper-tab.svg" alt="">
+                <img id="lowerTab" class="tab-parts" src="images/lower-tab.svg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        //BOX
+        let boxContainer = document.querySelector(".box-container");
+        let linesMask = document.getElementById("lines-mask");
+        let middle = document.getElementById("middle");
+        let bottom = document.getElementById("bottom");
+        let shine = document.getElementById("shine");
+        let shineLines = document.getElementById("shine-lines");
+        let shineGoThroughMiddle = true;
+        setInterval(() => {
+            if (shineGoThroughMiddle) {
+                middle.style.zIndex = "11";
+                bottom.style.zIndex = "9";
+                shine.style.animation = "moveShineLower 1.5s linear";
+                shineLines.style.animation = "moveShineLinesLower 1.5s linear";
+                shineGoThroughMiddle = false;
+            } else {
+                middle.style.zIndex = "9";
+                bottom.style.zIndex = "11";
+                shine.style.animation = "moveShineUpper 1.5s linear";
+                shineLines.style.animation = "moveShineLinesUpper 1.5s linear";
+                shineGoThroughMiddle = true;
+            }
+        }, 3000);
+
+
+        //TABS
+        let tabsContainer = document.querySelector(".tabs-container");
+        let upperTab = document.getElementById("upperTab");
+
+        let lowerTab = document.getElementById("lowerTab");
+
+        function setupTabs() {
+            if (boxContainer.clientHeight > 0) {
+                // console.log(boxContainer.clientHeight);
+                tabsContainer.style.height = boxContainer.clientHeight + "px";
+                linesMask.style.height = boxContainer.clientHeight + "px";
+
+                upperTab.style.top = "3.3%";
+                upperTab.style.left = "-14.5%";
+
+                lowerTab.style.top = "31%";
+                lowerTab.style.left = "-15%";
+                tabsContainer.style.visibility = "visible";
+                return true; // Success
+            }
+            return false; // Not ready yet
+        }
+
+        // Check if ResizeObserver is supported
+        if (typeof ResizeObserver !== 'undefined') {
+            // console.log("ResizeObserver is supported");
+            // Modern browsers - use ResizeObserver
+            const resizeObserver = new ResizeObserver(entries => {
+                for (let entry of entries) {
+                    if (entry.contentRect.height > 0) {
+                        setupTabs();
+                        resizeObserver.disconnect();
+                    }
+                }
+            });
+            resizeObserver.observe(boxContainer);
+        } else {
+            // console.log("ResizeObserver is not supported");
+            // Fallback for older browsers - use polling
+            const checkHeight = () => {
+                if (!setupTabs()) {
+                    setTimeout(checkHeight, 50);
+                }
+            };
+            setTimeout(checkHeight, 100);
+        }
+
+
+        //HOVER
+        let upperForHover = document.getElementById("upperForHover");
+        upperForHover.addEventListener("mouseenter", () => {
+            // console.log("mouseenter upper");
+            upperTab.style.left = "38%";
+            upperTab.style.top = "15%";
+        });
+        upperForHover.addEventListener("mouseleave", () => {
+            // console.log("mouseleave upper");
+            upperTab.style.top = "3.3%";
+            upperTab.style.left = "-14.5%";
+        });
+
+        let lowerForHover = document.getElementById("lowerForHover");
+        lowerForHover.addEventListener("mouseenter", () => {
+            // console.log("mouseenter lower");
+            lowerTab.style.left = "38%";
+            lowerTab.style.top = "45%";
+        });
+        lowerForHover.addEventListener("mouseleave", () => {
+            // console.log("mouseleave lower");
+            lowerTab.style.top = "31%";
+            lowerTab.style.left = "-15%";
+        })
+    });
+</script>
+
+</html>

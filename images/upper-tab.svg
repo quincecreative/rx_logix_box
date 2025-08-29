@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 369.37 468.87">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #eff8f5;
+        font-family: Exo2-SemiBold, 'Exo 2';
+        font-size: 42px;
+        font-variation-settings: ';
+        font-weight: 600;
+        letter-spacing: .1em;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+        opacity: .8;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="501.75" y1="240.65" x2="-153.57" y2="228.02" gradientUnits="userSpaceOnUse">
+      <stop offset=".04" stop-color="#2075bc"/>
+      <stop offset=".54" stop-color="#38a6be"/>
+      <stop offset=".64" stop-color="#3eb1bf"/>
+      <stop offset=".67" stop-color="#3eb1bf" stop-opacity=".93"/>
+      <stop offset=".78" stop-color="#3eb1bf" stop-opacity=".66"/>
+      <stop offset=".87" stop-color="#3eb1bf" stop-opacity=".46"/>
+      <stop offset=".94" stop-color="#3eb1bf" stop-opacity=".34"/>
+      <stop offset=".99" stop-color="#3eb1bf" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-2" d="m349.4,125.13L6.19,0c.04,1-.04,2-.29,2.98l-1.4,129.2c0,.39.02.79.03,1.18.02.41.03.83.03,1.24,0,3.63-.36,7.79-4.57,11.35,3.87,3.25,5.59,7.91,4.5,12.27v145.82c0,.39.02.79.03,1.18.02.41.03.83.03,1.24,0,1.5,0,3.42-.61,5.45l341.12,155.39c11.37,5.18,24.29-3.13,24.29-15.63V156.33c0-13.4-7.8-25.58-19.97-31.19Z"/>
+  <text class="cls-1" transform="translate(113.83 218.62) rotate(24.51) scale(.9 .86) skewX(23.61)"><tspan x="0" y="0">ADD-ON</tspan></text>
+</svg>
